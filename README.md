@@ -80,14 +80,21 @@
 
 ### Built With
 
-<div style="background:white;">
+<div style="background-color:'white';">
     <a href="https://ntent.art">
-        <img src="assets/logo.png" alt="drawing" width="200"/>
+        <img src="assets/logo.png"width="200"/>
     </a>
 </div>
-
-* [![NFT.STORAGE][nft.storage{ width=200px }]][nftstorage-url]
-* [![IPFS][ipfs.io]][ipfs-url{ width=200px }]
+<div style="background-color:'white';">
+    <a href="https://nft.storage">
+        <img src="assets/nftstorage.png"  width="200"/>
+    </a>
+</div>
+<div style="background-color:'white';">
+    <a href="https://ipfs.io">
+        <img src="assets/ipfs.png" width="200"/>
+    </a>
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
