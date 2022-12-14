@@ -1,0 +1,21 @@
+{
+  "name": "ntent-archive",
+  "author": "jiwa",
+  "version": "1.0.0",
+  "description": "Archive by ntent.art curates an art history archive of artworks, interviews, artist notes/back of napkins, etc using decentralized technologies. This utility extends nft.storage to easily managing upload of content in a way it can be found later. ",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "prettier" : {
+      "trailingComma": "es5",
+      "tabWidth": 4,
+      "semi": false,
+      "singleQuote": true
+  },
+  "license": "ISC",
+  "dependencies": {
+    "mime-types": "^2.1.35",
+    "nft.storage": "^7.0.0"
+  }
+}
