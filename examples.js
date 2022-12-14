@@ -294,7 +294,7 @@ async function getDirectoryContents(dirName, files) {
     return files;
 };
 
-//you can try any of the example you want!
+//you can try any of the examples you want!
 //just comment them in one at a time
 async function main() {
 

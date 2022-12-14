@@ -113,7 +113,7 @@ Option 1 : Install npm package in your project
    ```js
     var nArchive = new NtentArchive(nftStorageApiKey);
    ```
-4. Check <a href="#usage">usage</a> and examples.js for usage details
+4. See <a href="#usage">Usage</a> below and examples.js for examples/usage details.
 
 <br>
 
@@ -252,7 +252,7 @@ Option 2 : Clone the repo and play with the examples
     }
    ```
 
-   More examples in ./examples.js
+   More examples in <a href="https://github.com/ntentart/ntent-archive/blob/master/examples.js">examples.js</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -296,7 +296,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 jiwa - [@ntentart](https://twitter.com/ntentart) - iam@ntent.art
 
-Project Link: [https://github.com/ntentart/ntent-archive](https://github.com/ntentart/ntent-archive)
+More info on ntent.art: [ntent.art](ntent.art)
+we build art technologies for web3
+ntent.art empowers artists and institutions with fine art technologies for Web3. Our tools and applications offer Web3 integration with the ability to produce generative and dynamic art experiences on the blockchain.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
