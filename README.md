@@ -1,6 +1,3 @@
-# ntent-archive
-Assists in archiving multimedia and html-native content with nft.storage and IPFS.
-
 <a name="readme-top"></a>
 
 
@@ -83,7 +80,12 @@ Assists in archiving multimedia and html-native content with nft.storage and IPF
 
 ### Built With
 
-* [![NTENT.ART][ntent.art{ width=200px}]][ntent-url]
+<div style="background:white;">
+    <a href="https://ntent.art">
+        <img src="assets/logo.png" alt="drawing" width="200"/>
+    </a>
+</div>
+
 * [![NFT.STORAGE][nft.storage{ width=200px }]][nftstorage-url]
 * [![IPFS][ipfs.io]][ipfs-url{ width=200px }]
 
