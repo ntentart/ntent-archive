@@ -1,7 +1,7 @@
 ////////////////////////////
 //
 // Archive by ntent.art
-// Asssits in archiving multimedia and html-native content with nft.storage and IPFS.
+// Assists in archiving multimedia and html-native content with nft.storage and IPFS.
 // Author : jiwa (@dotjiwa)
 //
 ////////////////////////////
