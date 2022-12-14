@@ -5,7 +5,7 @@
   "description": "Archive by ntent.art curates an art history archive of artworks, interviews, artist notes/back of napkins, etc using decentralized technologies. This utility extends nft.storage to easily managing upload of content in a way it can be found later. ",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No test specified\""
   },
   "prettier": {
     "trailingComma": "es5",
