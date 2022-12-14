@@ -4,19 +4,19 @@ const fs = require("fs");
 var nftStorageApiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDQ4NTc4MzJENzk0NTRkRjJhMUM1ZmU4MDAyN0Y3MDhCNjZiMDlENTUiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY2Njg0MzI2MzMyMywibmFtZSI6Imppd2EifQ.ydfReOgZ25y5Tf5nA34XH89u0PnwActX-pcFT14E17w";
 var preferredIpfsGatewayBaseUrl = "ipfs.nftstorage.link";
 
+
 //you can try any of the example you want!
 //just comment them in one at a time
-
 async function main() {
 
-    //NFT Examples
-    //htmlNFTExample();
+    ////NFT Examples////
+    htmlNFTExample();
     //videoNFTExample();
 
-    //Other Examples
+    ////Other Examples////
     //imageFileOnlyExample();
     //collectionExample();
-    htmlOnlyExample();
+    //htmlOnlyExample();
 }
 
 async function videoNFTExample(){
