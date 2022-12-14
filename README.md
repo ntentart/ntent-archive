@@ -80,17 +80,17 @@
 
 ### Built With
 
-<div style="background-color:'white';">
+<div>
     <a href="https://ntent.art">
         <img src="assets/logo.png"width="200"/>
     </a>
 </div>
-<div style="background-color:'white';">
+<div>
     <a href="https://nft.storage">
         <img src="assets/nftstorage.png"  width="200"/>
     </a>
 </div>
-<div style="background-color:'white';">
+<div>
     <a href="https://ipfs.io">
         <img src="assets/ipfs.png" width="200"/>
     </a>
@@ -101,27 +101,29 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
 ### Installation
 
-Option 1 : Clone the whole repo
+Option 1 : Install npm package in your project
+
+1. Get a free API Key at [https://nft.storage](https://nft.storage)
+2. Install into your project with npm
+   ```sh
+   npm install ntent-archive
+   ```
+3. Pass in your API Key to the NtentArchive constructor in your code. 
+   ```js
+    var nArchive = new NtentArchive(nftStorageApiKey);
+   ```
+4. Check <a href="#usage">usage</a> and examples.js for usage details
+
+Option 2 : Clone the repo and play with the examples
 
 1. Get a free API Key at [https://nft.storage](https://nft.storage)
 2. Clone the repo
    ```sh
    git clone https://github.com/ntentart/ntent-archive.git
    ```
-3. Install NPM packages
+3. From the project root, install NPM packages
    ```sh
    npm install
    ```
@@ -129,18 +131,11 @@ Option 1 : Clone the whole repo
    ```js
     const nftStorageApiKey = "API_KEY_HERE";
    ```
-
-Option 2 : Install ntent-archive npm package in your project
-
-1. Get a free API Key at [https://nft.storage](https://nft.storage)
-2. Install into your project with npm
+5. Now you can run the examples, feel free to try them all!
    ```sh
-   npm install ntent-archive
+    node examples.js
    ```
-3. Pass in your API Key to the NtentArchive constructor in your code
-   ```js
-    var nArchive = new NtentArchive(nftStorageApiKey);
-   ```
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
