@@ -124,21 +124,21 @@ class NtentArchive {
             // required NFT Properties
             var validationResult = this.#validateNFTMetadata(nftMetadata);
             if (!validationResult.valid) {
-                reject(validationResult.message);
+                reject(new Error(validationResult.message));
                 return;
             }
 
             // validate tags
             validationResult = this.#validateTags(tags);
             if (!validationResult.valid) {
-                reject(validationResult.message)
+                reject(new Error(validationResult.message))
                 return;;
             }
 
             // validate content 
             validationResult = this.#validateNFTContent(contentOptions);
             if (!validationResult.valid) {
-                reject(validationResult.message)
+                reject(new Error(validationResult.message))
                 return;;
             }
 
@@ -149,7 +149,7 @@ class NtentArchive {
             const metadata = await this.client.store(nftMetadata);
 
             resolve(metadata);
-        });
+        }).catch(e => console.log(e)); 
     }
 
     ////////////////////////////
@@ -181,32 +181,32 @@ class NtentArchive {
             // validate required file metadata
             var validationResult = this.#validateFileMetadata(assetMetadata);
             if (!validationResult.valid) {
-                reject(validationResult.message);
+                reject(new Error(validationResult.message));
                 return;
             }
 
             // validate tags
             validationResult = this.#validateTags(tags);
             if (!validationResult.valid) {
-                reject(validationResult.message)
+                reject(new Error(validationResult.message))
                 return;;
             }
 
             // validate content 
             validationResult = this.#validateFileContent(contentOptions);
             if (!validationResult.valid) {
-                reject(validationResult.message)
+                reject(new Error(validationResult.message))
                 return;;
             }
 
             this.#attachArchivalInformation(assetMetadata, contentOptions, tags);
 
-             this.#attachFileContent(assetMetadata, contentOptions);
+            this.#attachFileContent(assetMetadata, contentOptions);
 
             const metadata = await this.client.store(assetMetadata);
 
             resolve(metadata);
-        });
+        }).catch(e => console.log(e)); 
     }
 
     ////////////////////////////
@@ -225,7 +225,6 @@ class NtentArchive {
         contentOptions,
         tags,
         creatorId = null) {
-
         return new Promise(async (resolve, reject) => {
 
             // append creator id if given
@@ -239,32 +238,32 @@ class NtentArchive {
             // validate required file metadata
             var validationResult = this.#validateFileMetadata(assetMetadata);
             if (!validationResult.valid) {
-                reject(validationResult.message);
+                reject(new Error(validationResult.message));
                 return;
             }
 
             // validate tags
             validationResult = this.#validateTags(tags);
             if (!validationResult.valid) {
-                reject(validationResult.message)
+                reject(new Error(validationResult.message))
                 return;;
             }
 
             // validate content 
             validationResult = this.#validateCollectionContent(contentOptions);
             if (!validationResult.valid) {
-                reject(validationResult.message)
+                reject(new Error(validationResult.message))
                 return;;
             }
 
             this.#attachArchivalInformation(assetMetadata, contentOptions, tags);
 
-            this.#attachCollectionContent(assetMetadata, contentOptions);
+            await this.#attachCollectionContent(assetMetadata, contentOptions);
 
             const metadata = await this.client.store(assetMetadata);
 
             resolve(metadata);
-        });
+        }).catch(e => console.log(e)); 
     }
 
     ////////////////////////////
@@ -283,7 +282,6 @@ class NtentArchive {
         contentOptions,
         tags,
         creatorId = null) {
-
         return new Promise(async (resolve, reject) => {
 
             // append creator id if given
@@ -297,21 +295,21 @@ class NtentArchive {
             // required NFT Properties
             var validationResult = this.#validateFileMetadata(assetMetadata);
             if (!validationResult.valid) {
-                reject(validationResult.message);
+                reject(new Error(validationResult.message))
                 return;
             }
 
             // validate tags
             validationResult = this.#validateTags(tags);
             if (!validationResult.valid) {
-                reject(validationResult.message)
+                reject(new Error(validationResult.message))
                 return;;
             }
 
             // validate content 
             validationResult = this.#validateHtmlContent(contentOptions);
             if (!validationResult.valid) {
-                reject(validationResult.message)
+                reject(new Error(validationResult.message))
                 return;;
             }
 
@@ -322,7 +320,7 @@ class NtentArchive {
             const metadata = await this.client.store(assetMetadata);
 
             resolve(metadata);
-        });
+        }).catch(e => console.log(e)); 
     }
 
     //////////////////////////////////////////////////////////////////
@@ -347,19 +345,23 @@ class NtentArchive {
             contentOptions.html.files.forEach(f => {
                 f.mimetype = mime.lookup(f.filename)
             })
-
         }
     }
 
     #attachArchivalInformation(metadata,contentOptions, tags) {
-
         if (contentOptions.image) {
-            tags.push("image");
-            tags.push(contentOptions.image.mimetype);
-            tags.push(contentOptions.image.filename);
+            if(!contentOptions.gif &&
+                !contentOptions.video && 
+                !contentOptions.other && 
+                !contentOptions.html && 
+                !contentOptions.collection){
+                    tags.push("image");
+                    tags.push(contentOptions.image.mimetype);
+                    tags.push(contentOptions.image.filename);
+            }
         }
 
-        if (contentOptions.gif) {
+        if (contentOptions.gif){
             tags.push("gif");
             tags.push(contentOptions.image.filename);
         }
@@ -377,6 +379,10 @@ class NtentArchive {
 
         if (contentOptions.html) {
             tags.push("html");
+        }
+
+        if (contentOptions.collection) {
+            tags.push("collection");
         }
 
         metadata.archivalTags = tags;
@@ -448,63 +454,70 @@ class NtentArchive {
 
     }
 
-    #attachFileContent(nftMetadata, contentOptions) {
+    #attachFileContent(assetMetadata, contentOptions) {
 
-
+        var file;
         if (contentOptions.image) {
-            const file = new File([contentOptions.image.buffer], contentOptions.image.filename, {
+            file = new File([contentOptions.image.buffer], contentOptions.image.filename, {
                 type: contentOptions.image.mimetype
             });
-            nftMetadata.asset = file;
+            assetMetadata.image = file;
         }
-
         if (contentOptions.gif) {
-            const file = new File([contentOptions.gif.buffer], contentOptions.gif.filename, {
+            file = new File([contentOptions.gif.buffer], contentOptions.gif.filename, {
                 type: contentOptions.gif.mimetype
             });
-            nftMetadata.asset = file;
+            assetMetadata.gif = file;
         }
-
         if (contentOptions.video) {
-            const file = new File([contentOptions.video.buffer], contentOptions.video.filename, {
+            file = new File([contentOptions.video.buffer], contentOptions.video.filename, {
                 type: contentOptions.video.mimetype
             });
-            nftMetadata.asset = file;
+            assetMetadata.video = file;
         }
-
         if (contentOptions.other) {
-            const file = new File([contentOptions.other.buffer], contentOptions.other.filename, {
+            file = new File([contentOptions.other.buffer], contentOptions.other.filename, {
                 type: contentOptions.other.mimetype
             });
-            nftMetadata.asset = file;
+            assetMetadata.other = file;
+
         }
+        assetMetadata.asset = file;
 
     }
 
-    #attachCollectionContent(filesMetadata, contentOptions) {
+    #attachCollectionContent(assetMetadata, contentOptions) {
 
         return new Promise(async (resolve) => {
 
+
+            //handle preview
+            var file = new File([contentOptions.image.buffer], contentOptions.image.filename, {
+                    type: contentOptions.image.mimetype
+                });
+                assetMetadata.image = file;
+
+            //handle collection
+            
             contentOptions.collection.filesReady = [];
 
             contentOptions.collection.files.forEach(f => {
-                var relativePath = f.path.replace(contentOptions.html.rootFolder, "");
+                var relativePath = f.path.replace(contentOptions.collection.rootFolder, "");
                 const file = new File([f.buffer], relativePath, {
                     type: f.mimetype
                 });
-                contentOptions.html.filesReady.push(file);
+                contentOptions.collection.filesReady.push(file);
             })
 
             var result = await this.client.storeDirectory(contentOptions.collection.filesReady);
-            filesMetadata.ipfsCid = result;
-            filesMetadata.ipfsUrl = "ipfs://" + result;
-            filesMetadata.files = contentOptions.collection.files.map(f => f.path.replace(contentOptions.collection.rootFolder, ""));
+            assetMetadata.ipfsCid = result;
+            assetMetadata.ipfsUrl = "ipfs://" + result;
+            assetMetadata.assets = contentOptions.collection.files.map(f => f.path.replace(contentOptions.collection.rootFolder, ""));
             
             if (this.preferredGatewayBaseUrl)
-                filesMetadata.directoryGatewayUrl = "https://" + result + "." + this.preferredGatewayBaseUrl;
+                assetMetadata.directoryGatewayUrl = "https://" + result + "." + this.preferredGatewayBaseUrl;
 
             resolve();
-
         });
 
     }
@@ -513,22 +526,29 @@ class NtentArchive {
 
         return new Promise(async (resolve) => {
 
-                contentOptions.html.filesReady = [];
+            //handle preview
+            var file = new File([contentOptions.image.buffer], contentOptions.image.filename, {
+                    type: contentOptions.image.mimetype
+                });
+            assetMetadata.image = file;
 
-                contentOptions.html.files.forEach(f => {
-                    var relativePath = f.path.replace(contentOptions.html.rootFolder, "");
-                    const file = new File([f.buffer], relativePath, {
-                        type: f.mimetype
-                    });
-                    contentOptions.html.filesReady.push(file);
-                })
+            //upload HTML
+            contentOptions.html.filesReady = [];
 
-                var result = await this.client.storeDirectory(contentOptions.html.filesReady);
-                assetMetadata.ipfsCid = result;
-                assetMetadata.ipfsUrl = "ipfs://" + result + "/index.html";
+            contentOptions.html.files.forEach(f => {
+                var relativePath = f.path.replace(contentOptions.html.rootFolder, "");
+                const file = new File([f.buffer], relativePath, {
+                    type: f.mimetype
+                });
+                contentOptions.html.filesReady.push(file);
+            })
 
-                if (this.preferredGatewayBaseUrl)
-                    assetMetadata.directoryGatewayUrl = "https://" + result + "." + this.preferredGatewayBaseUrl + "/index.html";
+            var result = await this.client.storeDirectory(contentOptions.html.filesReady);
+            assetMetadata.ipfsCid = result;
+            assetMetadata.ipfsUrl = "ipfs://" + result + "/index.html";
+
+            if (this.preferredGatewayBaseUrl)
+                assetMetadata.directoryGatewayUrl = "https://" + result + "." + this.preferredGatewayBaseUrl + "/index.html";
 
             resolve();
         })
@@ -678,6 +698,11 @@ class NtentArchive {
 
         var filesFound = 0;
 
+        if(!contentOptions.image){
+            valid = false;
+            msg += "A preview image at minimum is required for every archival. ";
+        }
+
         if(contentOptions.image){
             filesFound++;
         }
@@ -728,6 +753,11 @@ class NtentArchive {
         var valid = true;
         var msg = "";
 
+        if(!contentOptions.image){
+            valid = false;
+            msg += "A preview image at minimum is required for every archival. ";
+        }
+
         if (!contentOptions.collection) {
             valid = false;
             msg += "Please use the 'bulk' option for bulk operations.";
@@ -743,6 +773,11 @@ class NtentArchive {
 
         var valid = true;
         var msg = "";
+
+        if(!contentOptions.image){
+            valid = false;
+            msg += "A preview image at minimum is required for every archival. ";
+        }
 
         if (!contentOptions.html) {
             valid = false;

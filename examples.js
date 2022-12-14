@@ -2,7 +2,7 @@ var NtentArchive = require("./ntentArchive.js");
 const fs = require("fs");
 
 var nftStorageApiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDQ4NTc4MzJENzk0NTRkRjJhMUM1ZmU4MDAyN0Y3MDhCNjZiMDlENTUiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY2Njg0MzI2MzMyMywibmFtZSI6Imppd2EifQ.ydfReOgZ25y5Tf5nA34XH89u0PnwActX-pcFT14E17w";
-var preferredIpfsGatewayBaseUrl = "ipfs.nftstorage.link/";
+var preferredIpfsGatewayBaseUrl = "ipfs.nftstorage.link";
 
 //you can try any of the example you want!
 //just comment them in one at a time
@@ -10,13 +10,13 @@ var preferredIpfsGatewayBaseUrl = "ipfs.nftstorage.link/";
 async function main() {
 
     //NFT Examples
-    htmlNFTExample();
+    //htmlNFTExample();
     //videoNFTExample();
 
     //Other Examples
     //imageFileOnlyExample();
-    // collectionExample();
-    // htmlOnlyExample();
+    //collectionExample();
+    htmlOnlyExample();
 }
 
 async function videoNFTExample(){
@@ -58,10 +58,14 @@ async function videoNFTExample(){
     var result = await nArchive.archiveToken(testMetadata, contentOptions, tags, "123");
 
     //success! do what you want with the results
-    result.ipfsCid = result.ipnft;
-    result.gatewayUrl = "https://" + result.ipfsCid + "." + preferredIpfsGatewayBaseUrl +  "/metadata.json";
-    console.log('metadata.json with IPFS gateway URLs:\n', result.embed())
-    console.log(result);
+    if(result){
+        //success! do what you want with the results
+        result.ipfsCid = result.ipnft;
+        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
+        console.log(JSON.stringify(result));
+    }else{
+        console.log("Archive failed! Check the logs.")
+    }
 }
 
 async function htmlNFTExample(){
@@ -112,10 +116,14 @@ async function htmlNFTExample(){
     //and let it fly
     var result = await nArchive.archiveToken(testMetadata, contentOptions, tags, "123");
     
-    //success! do what you want with the results
-    result.ipfsCid = result.ipnft;
-    result.gatewayUrl = preferredIpfsGatewayBaseUrl + result.ipfsCid + "/metadata.json";
-    console.log(result);
+    if(result){
+        //success! do what you want with the results
+        result.ipfsCid = result.ipnft;
+        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
+        console.log(JSON.stringify(result));
+    }else{
+        console.log("Archive failed! Check the logs.")
+    }
 }
 
 async function imageFileOnlyExample(){
@@ -139,20 +147,25 @@ async function imageFileOnlyExample(){
     var tags = ["art", "generative art", "generative", "jiwa", "ntent"];
 
     // include our relevant content options for this upload
+    // at minimum a preview image is always required
     var contentOptions = {
         image: {
             buffer: asset,
             filename: "image.png"
-        },
+        }
     }
 
     //and let it fly
     var result = await nArchive.archiveFile(testMetadata, contentOptions, tags, "123");
 
-    //success! do what you want with the results
-    result.ipfsCid = result.ipnft;
-    result.gatewayUrl = "https://" + result.ipfsCid + "." + preferredIpfsGatewayBaseUrl +  "/metadata.json";
-    console.log(result);
+    if(result){
+        //success! do what you want with the results
+        result.ipfsCid = result.ipnft;
+        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
+        console.log(JSON.stringify(result));
+    }else{
+        console.log("Archive failed! Check the logs.")
+    }
 
 }
 
@@ -178,7 +191,12 @@ async function collectionExample(){
     var tags = ["art", "generative art", "generative", "jiwa", "ntent"];
 
     // include our relevant content options for this upload
+    // a preview image is required
     var contentOptions = {
+        image: {
+            buffer: image,
+            filename: "preview.png"
+        },
         collection: {
             files: [
                 {
@@ -199,10 +217,14 @@ async function collectionExample(){
     //and let it fly
     var result = await nArchive.archiveCollection(testMetadata, contentOptions, tags, "123");
 
-    //success! do what you want with the results
-    result.ipfsCid = result.ipnft;
-    result.gatewayUrl = "https://" + result.ipfsCid + "." + preferredIpfsGatewayBaseUrl +  "/metadata.json";
-    console.log(result);
+    if(result){
+        //success! do what you want with the results
+        result.ipfsCid = result.ipnft;
+        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
+        console.log(JSON.stringify(result));
+    }else{
+        console.log("Archive failed! Check the logs.")
+    }
 
 }
 
@@ -215,6 +237,9 @@ async function htmlOnlyExample(){
         description: "This was a work in progress I created in October 2022",
         artist: "jiwa",
     }
+
+    //preview image required
+    var image = await fs.readFileSync("./assets/example.png");
 
     //define project folder
     var nftGenArtProjectFolder = "./html-site-example";
@@ -237,6 +262,10 @@ async function htmlOnlyExample(){
 
     // include our relevant content options for this upload
     var contentOptions = {
+        image: {
+            buffer: image,
+            filename: "preview.png"
+        },
         html: {
             files: nftGenArtProject,
             rootFolder : nftGenArtProjectFolder
@@ -246,10 +275,15 @@ async function htmlOnlyExample(){
     //and let it fly
     var result = await nArchive.archiveHtmlSite(testMetadata, contentOptions, tags, "123");
     
-    //success! do what you want with the results
-    result.ipfsCid = result.ipnft;
-    result.gatewayUrl = preferredIpfsGatewayBaseUrl + result.ipfsCid + "/metadata.json";
-    console.log(result);
+    if(result){
+        //success! do what you want with the results
+        result.ipfsCid = result.ipnft;
+        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
+        console.log(JSON.stringify(result));
+    }else{
+        console.log("Archive failed! Check the logs.")
+    }
+
    
 }
 
