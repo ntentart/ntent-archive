@@ -16,7 +16,6 @@
 [![MIT License][license-shield]][license-url]
 
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -31,7 +30,7 @@
     Includes support for html-based projects. Easily uploaded to IPFS via 
     NFT.STORAGE for decentralized storage.
     <br />
-    <a href="https://github.com/ntentart/ntent-archive/examples.js"><strong>Explore the examples »</strong></a>
+    <a href="https://github.com/ntentart/ntent-archive/blob/master/examples.js"><strong>Explore the examples »</strong></a>
     <br />
     <br />
     <a href="https://github.com/ntentart/ntent-archive/issues">Report Bug</a>
@@ -116,6 +115,8 @@ Option 1 : Install npm package in your project
    ```
 4. Check <a href="#usage">usage</a> and examples.js for usage details
 
+<br>
+
 Option 2 : Clone the repo and play with the examples
 
 1. Get a free API Key at [https://nft.storage](https://nft.storage)
@@ -136,9 +137,7 @@ Option 2 : Clone the repo and play with the examples
     node examples.js
    ```
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- USAGE EXAMPLES -->

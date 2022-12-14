@@ -4,20 +4,6 @@ const fs = require("fs");
 var nftStorageApiKey = "API_KEY_HERE";
 var preferredIpfsGatewayBaseUrl = "ipfs.nftstorage.link";
 
-//you can try any of the example you want!
-//just comment them in one at a time
-async function main() {
-
-    ////NFT Examples////
-    htmlNFTExample();
-    //videoNFTExample();
-
-    ////Other Examples////
-    //imageFileOnlyExample();
-    //collectionExample();
-    //htmlOnlyExample();
-}
-
 async function videoNFTExample(){
 
     //define whatever NFT meta is relevant to you!
@@ -307,5 +293,20 @@ async function getDirectoryContents(dirName, files) {
 
     return files;
 };
+
+//you can try any of the example you want!
+//just comment them in one at a time
+async function main() {
+
+    ////NFT Examples////
+    htmlNFTExample();
+    //videoNFTExample();
+
+    ////Other Examples////
+    //imageFileOnlyExample();
+    //collectionExample();
+    //htmlOnlyExample();
+}
+
 
 main();
