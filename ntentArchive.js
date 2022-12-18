@@ -105,23 +105,23 @@ class NtentArchive {
             }
 
             // lookup mime content types
-            this.#lookupMimeTypes(contentOptions)
+            this.#lookupMimeTypes(contentOptions);
 
-            var result = this.#validate(assetMetadata, tags, contentOptions)
+            var result = this.#validateToken(nftMetadata, tags, contentOptions);
             if (!result.valid) {
                 reject(new Error(result.message))
                 return
             }
 
-            this.#attachArchivalInformation(nftMetadata, contentOptions, tags)
+            this.#attachArchivalInformation(nftMetadata, contentOptions, tags);
 
-            await this.#attachNFTContent(nftMetadata, contentOptions)
+            await this.#attachNFTContent(nftMetadata, contentOptions);
 
-            const metadata = await this.client.store(nftMetadata)
+            const metadata = await this.client.store(nftMetadata);
 
-            this.#finalizeMetadata(metadata)
+            this.#finalizeMetadata(metadata);
 
-            resolve(metadata.data)
+            resolve(metadata.data);
         }).catch((e) => console.log(e))
     }
 
@@ -143,21 +143,21 @@ class NtentArchive {
             }
 
             // lookup mime content types
-            this.#lookupMimeTypes(contentOptions)
+            this.#lookupMimeTypes(contentOptions);
 
-            var result = this.#validate(assetMetadata, tags, contentOptions)
+            var result = this.#validateFile(assetMetadata, tags, contentOptions);
             if (!result.valid) {
                 reject(new Error(result.message))
                 return
             }
 
-            this.#attachArchivalInformation(assetMetadata, contentOptions, tags)
+            this.#attachArchivalInformation(assetMetadata, contentOptions, tags);
 
-            this.#attachFileContent(assetMetadata, contentOptions)
+            this.#attachFileContent(assetMetadata, contentOptions);
 
-            this.#finalizeMetadata(metadata)
+            this.#finalizeMetadata(metadata);
 
-            resolve(metadata.data)
+            resolve(metadata.data);
         }).catch((e) => console.log(e))
     }
 
@@ -180,23 +180,24 @@ class NtentArchive {
             }
 
             // lookup mime content types
-            this.#lookupMimeTypes(contentOptions)
+            this.#lookupMimeTypes(contentOptions);
 
-            var result = this.#validate(assetMetadata, tags, contentOptions)
+            var result = this.#validateCollection(assetMetadata, tags, contentOptions);
             if (!result.valid) {
                 reject(new Error(result.message))
                 return
             }
 
-            this.#attachArchivalInformation(assetMetadata, contentOptions, tags)
+            this.#attachArchivalInformation(assetMetadata, contentOptions, tags);
 
-            await this.#attachCollectionContent(assetMetadata, contentOptions)
+            await this.#attachCollectionContent(assetMetadata, contentOptions);
 
-            const metadata = await this.client.store(assetMetadata)
+            const metadata = await this.client.store(assetMetadata);
 
-            this.#finalizeMetadata(metadata)
+            this.#finalizeMetadata(metadata);
 
-            resolve(metadata.data)
+            resolve(metadata.data);
+
         }).catch((e) => console.log(e))
     }
 
@@ -221,7 +222,7 @@ class NtentArchive {
             // lookup mime content types
             this.#lookupMimeTypes(contentOptions)
 
-            var result = this.#validate(assetMetadata, tags, contentOptions)
+            var result = this.#validateHtml(assetMetadata, tags, contentOptions)
             if (!result.valid) {
                 reject(new Error(result.message))
                 return
@@ -244,7 +245,57 @@ class NtentArchive {
     // Private helper methods
     ////////////////////////////
 
-    #validate(metadata, tags, contentOptions) {
+    #validateFile(metadata, tags, contentOptions) {
+        var msg = "";
+
+        // required NFT Properties
+        var validationResult = this.#validateFileMetadata(metadata)
+        if (!validationResult.valid) {
+            msg += validationResult.message
+        }
+
+        // validate tags
+        validationResult = this.#validateTags(tags)
+        if (!validationResult.valid) {
+            msg += validationResult.message
+        }
+
+        // validate content
+        validationResult = this.#validateFileContent(contentOptions)
+        if (!validationResult.valid) {
+            msg += validationResult.message
+        }
+
+        if (msg) return { valid: false, message: msg }
+        else return { valid: true }
+    }
+
+    #validateCollection(metadata, tags, contentOptions) {
+        var msg = "";
+
+        // required NFT Properties
+        var validationResult = this.#validateFileMetadata(metadata)
+        if (!validationResult.valid) {
+            msg += validationResult.message
+        }
+
+        // validate tags
+        validationResult = this.#validateTags(tags)
+        if (!validationResult.valid) {
+            msg += validationResult.message
+        }
+
+        // validate content
+        validationResult = this.#validateCollectionContent(contentOptions)
+        if (!validationResult.valid) {
+            msg += validationResult.message
+        }
+
+        if (msg) return { valid: false, message: msg }
+        else return { valid: true }
+    }
+
+    #validateHtml(metadata, tags, contentOptions) {
         var msg = "";
 
         // required NFT Properties
@@ -261,6 +312,31 @@ class NtentArchive {
 
         // validate content
         validationResult = this.#validateHtmlContent(contentOptions)
+        if (!validationResult.valid) {
+            msg += validationResult.message
+        }
+
+        if (msg) return { valid: false, message: msg }
+        else return { valid: true }
+    }
+
+    #validateToken(metadata, tags, contentOptions) {
+        var msg = "";
+
+        // required NFT Properties
+        var validationResult = this.#validateNFTMetadata(metadata)
+        if (!validationResult.valid) {
+            msg += validationResult.message
+        }
+
+        // validate tags
+        validationResult = this.#validateTags(tags)
+        if (!validationResult.valid) {
+            msg += validationResult.message
+        }
+
+        // validate content
+        validationResult = this.#validateNFTContent(contentOptions)
         if (!validationResult.valid) {
             msg += validationResult.message
         }

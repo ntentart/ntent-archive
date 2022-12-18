@@ -43,13 +43,10 @@ async function videoNFTExample(){
     var result = await nArchive.archiveToken(testMetadata, contentOptions, tags, "123");
 
     //success! do what you want with the results
-    if(result){
-        result.data.ipfsCid = result.ipnft;
-        result.data.gatewayUrl = "https://" + result.data.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
+    if(result)
         console.log(JSON.stringify(result));
-    }else{
+    else
         console.log("Archive failed! Check the logs.")
-    }
 }
 
 async function htmlNFTExample(){
@@ -101,11 +98,10 @@ async function htmlNFTExample(){
     var result = await nArchive.archiveToken(testMetadata, contentOptions, tags, "123");
     
     //success! do what you want with the results
-    if(result){
+    if(result)
         console.log(JSON.stringify(result));
-    }else{
+    else
         console.log("Archive failed! Check the logs.")
-    }
 }
 
 async function imageFileOnlyExample(){
@@ -141,11 +137,10 @@ async function imageFileOnlyExample(){
     var result = await nArchive.archiveFile(testMetadata, contentOptions, tags, "123");
 
     //success! do what you want with the results
-    if(result){
+    if(result)
         console.log(JSON.stringify(result));
-    }else{
+    else
         console.log("Archive failed! Check the logs.")
-    }
 
 }
 
@@ -198,11 +193,10 @@ async function collectionExample(){
     var result = await nArchive.archiveCollection(testMetadata, contentOptions, tags, "123");
     
     //success! do what you want with the results
-    if(result){
+    if(result)
         console.log(JSON.stringify(result));
-    }else{
+    else
         console.log("Archive failed! Check the logs.")
-    }
 
 }
 
@@ -254,11 +248,10 @@ async function htmlOnlyExample(){
     var result = await nArchive.archiveHtmlSite(testMetadata, contentOptions, tags, "123");
     
     //success! do what you want with the results
-    if(result){
+    if(result)
         console.log(JSON.stringify(result));
-    }else{
+    else
         console.log("Archive failed! Check the logs.")
-    }
 }
 
 async function getDirectoryContents(dirName, files) {

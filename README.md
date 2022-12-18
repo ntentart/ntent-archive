@@ -1,6 +1,5 @@
 <a name="readme-top"></a>
 
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -9,12 +8,12 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -38,8 +37,6 @@
     <a href="https://github.com/ntentart/ntent-archive/issues">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -67,15 +64,13 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://ntent.art)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ### Built With
 
@@ -118,93 +113,96 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
     Most methods take the following 4 parameters:
     1. Metadata
-       a. If using an 'NFT' method, requires compliant ERC-721 NFT Metadata, example below. https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md 
+       a. If using an 'NFT' method, requires compliant ERC-721 NFT Metadata, example below. https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md
        b. else only 'name', and 'description' are required, but you can include any describing metadata.
 
-    2. Content Options object, you need to use the appropriate format, more info / examples below. 
+    2. Content Options object, you need to use the appropriate format, more info / examples below.
 
     3. Tags used to find this content later, ie search, etc.
 
     4. Optionally, include your creator id if you've been given one.
 
-  **1. Compliant NFT Metadata Example JSON**
-   ```js
-    {
-        "platform": "ntent.art",
-        "name": "Moment After",
-        "series": "1",
-        "description": "Moment After by ntent.art is a 1 of 1 piece of digital art at the intersection of multimedia, performance, and abstract generative art.  Moment After combines the human side of interaction and technology with the ephemeral nature of performance + the permanence of the blockchain.  Moment After brings attention to the moment after the climax in any interaction.  Do you feel good, or do you feel off?  Feel into the moment after. Please allow 10-15 minutes for loading to complete.",
-        "external_url": "https://app.ntent.art/n/project/8",
-        "artist": "ntent.art",
-        "collection_name": "ntent.art",
-        "traits": [{
-            "trait_type": "Project",
-            "value": "1 of 1's"
-        }],
-        "attributes": [{
-            "trait_type": "Project",
-            "value": "1 of 1's"
-        }],
-        "features": ["Project : 1 of 1's"],
-        "website": "https://app.ntent.art",
-        "tokenID": "1",
-        "license": "MIT",
-        "projectId": "1",
-        "image": "https://hosted.ntent.art/images/ma.jpeg",
-        "full_screen_url": "https://hosted.ntent.art/projects/moment-after/index.html",
-        "animation_url": "https://hosted.ntent.art/projects/moment-after/index.html",
-        "interactive_nft": {
-            "code_uri": "https://hosted.ntent.art/projects/moment-after/index.html"
-        }
-    }
+**1. Compliant NFT Metadata Example JSON**
 
-  ```
-  **2. Content Options Properties**
-  *Use the following formats, and see below for examples.*
-    
-   ```js
-    var contentOptions = {
-        image : {
-            buffer : buffer,
-            filename : filename
-        },
-        gif : {
-            buffer : buffer,
-            filename : filename
-        },
-        video : {
-            buffer : buffer,
-            filename : filename
-        },
-        other : {
-            buffer : buffer,
-            filename : filename
-        },
-        //'files' objects for html and collection must be an array of buffers
-        //populate 'rootFolder' with root project folder if applicable
-        html: {
-            files: files,
-            rootFolder : rootFolder
-        },
+```js
+ {
+     "platform": "ntent.art",
+     "name": "Moment After",
+     "series": "1",
+     "description": "Moment After by ntent.art is a 1 of 1 piece of digital art at the intersection of multimedia, performance, and abstract generative art.  Moment After combines the human side of interaction and technology with the ephemeral nature of performance + the permanence of the blockchain.  Moment After brings attention to the moment after the climax in any interaction.  Do you feel good, or do you feel off?  Feel into the moment after. Please allow 10-15 minutes for loading to complete.",
+     "external_url": "https://app.ntent.art/n/project/8",
+     "artist": "ntent.art",
+     "collection_name": "ntent.art",
+     "traits": [{
+         "trait_type": "Project",
+         "value": "1 of 1's"
+     }],
+     "attributes": [{
+         "trait_type": "Project",
+         "value": "1 of 1's"
+     }],
+     "features": ["Project : 1 of 1's"],
+     "website": "https://app.ntent.art",
+     "tokenID": "1",
+     "license": "MIT",
+     "projectId": "1",
+     "image": "https://hosted.ntent.art/images/ma.jpeg",
+     "full_screen_url": "https://hosted.ntent.art/projects/moment-after/index.html",
+     "animation_url": "https://hosted.ntent.art/projects/moment-after/index.html",
+     "interactive_nft": {
+         "code_uri": "https://hosted.ntent.art/projects/moment-after/index.html"
+     }
+ }
 
-        collection: {
-            files: files,
-            rootFolder : rootFolder
-        },
-    }
-  ```
+```
 
-  **Content Options Notes**
+**2. Content Options Properties**
+_Use the following formats, and see below for examples._
+
+```js
+var contentOptions = {
+    image: {
+        buffer: buffer,
+        filename: filename,
+    },
+    gif: {
+        buffer: buffer,
+        filename: filename,
+    },
+    video: {
+        buffer: buffer,
+        filename: filename,
+    },
+    other: {
+        buffer: buffer,
+        filename: filename,
+    },
+    //'files' objects for html and collection must be an array of buffers
+    //populate 'rootFolder' with root project folder if applicable
+    html: {
+        files: files,
+        rootFolder: rootFolder,
+    },
+
+    collection: {
+        files: files,
+        rootFolder: rootFolder,
+    },
+}
+```
+
+**Content Options Notes**
 
     Single File
-    If archiving a single file, and the file is not an image, gif, or video, use the other property and format. 
+    If archiving a single file, and the file is not an image, gif, or video, use the other property and format.
 
     Collection of Files
-    It is recommended to upload one file at a time, for archiving purposes, which gives each its own metadata, but if more appropriate, you can upload a collection and provide a single metadata file for the whole collection. 
+    It is recommended to upload one file at a time, for archiving purposes, which gives each its own metadata, but if more appropriate, you can upload a collection and provide a single metadata file for the whole collection.
 
     If uploading multiple files with a single metadata file, use the collection property and format.
 
@@ -212,7 +210,7 @@
     If uploading an html project, use the html property and format.
 
     NFT Assets
-    For 'NFT' methods, the image property and format is required, and will be used as a preview image if other files are included. 
+    For 'NFT' methods, the image property and format is required, and will be used as a preview image if other files are included.
 
 ### Installation
 
@@ -220,17 +218,17 @@ Option 1 : Install npm package in your project
 
 1. Get a free API Key at [https://nft.storage](https://nft.storage)
 2. Install into your project with npm
-   ```sh
-    npm install ntent-archive
-   ```
+    ```sh
+     npm install ntent-archive
+    ```
 3. Add the require like this:
-   ```js
-    var NtentArchive = require("ntent-archive");
-   ```
-4. Pass in your API Key to the NtentArchive constructor in your code. 
-   ```js
-    var nArchive = new NtentArchive(nftStorageApiKey);
-   ```
+    ```js
+    var NtentArchive = require('ntent-archive')
+    ```
+4. Pass in your API Key to the NtentArchive constructor in your code.
+    ```js
+    var nArchive = new NtentArchive(nftStorageApiKey)
+    ```
 5. See <a href="#usage">Usage</a> below and examples.js for examples/usage details.
 
 <br>
@@ -239,150 +237,156 @@ Option 2 : Clone the repo and play with the examples
 
 1. Get a free API Key at [https://nft.storage](https://nft.storage)
 2. Clone the repo
-   ```sh
-   git clone https://github.com/ntentart/ntent-archive.git
-   ```
+    ```sh
+    git clone https://github.com/ntentart/ntent-archive.git
+    ```
 3. From the project root, install NPM packages
-   ```sh
-   npm install
-   ```
+    ```sh
+    npm install
+    ```
 4. Enter your API in `examples.js`
-   ```js
-    const nftStorageApiKey = "API_KEY_HERE";
-   ```
+    ```js
+    const nftStorageApiKey = 'API_KEY_HERE'
+    ```
 5. Now you can run the examples, feel free to try them all!
-   ```sh
-    node examples.js
-   ```
+    ```sh
+     node examples.js
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
     Example 1 : NFT with Html Based Content (maybe a generative art project)
 
-   ```js
-     //define whatever NFT meta is relevant to you!
-    //make sure to include minimum ERC-721 standard properties
-    var testMetadata = {
-        name: "NFT Upload Test",
-        description: "This describes the NFT in great detail.",
-        artist: "jiwa",
-        collection_name: "Digital Dust Bowl; the Collapse of the Entire Internet"
-    }
+```js
+//define whatever NFT meta is relevant to you!
+//make sure to include minimum ERC-721 standard properties
+var testMetadata = {
+    name: 'NFT Upload Test',
+    description: 'This describes the NFT in great detail.',
+    artist: 'jiwa',
+    collection_name: 'Digital Dust Bowl; the Collapse of the Entire Internet',
+}
 
-    //include preview image for this html page
-    var nftImage = await fs.readFileSync("./assets/example.png");
+//include preview image for this html page
+var nftImage = await fs.readFileSync('./assets/example.png')
 
-    //define project folder
-    var nftGenArtProjectFolder = "./html-site-example";
+//define project folder
+var nftGenArtProjectFolder = './html-site-example'
 
-    //get all directory contents
-    //should be an array of objects with this format:
-    //{
-        // path: `${dirName}/${item.name}`,
-        // buffer: fs.readFileSync(`${dirName}/${item.name}`),
-        // filename: item.name
-    //}
-    var nftGenArtProject = await getDirectoryContents(nftGenArtProjectFolder, []);
+//get all directory contents
+//should be an array of objects with this format:
+//{
+// path: `${dirName}/${item.name}`,
+// buffer: fs.readFileSync(`${dirName}/${item.name}`),
+// filename: item.name
+//}
+var nftGenArtProject = await getDirectoryContents(nftGenArtProjectFolder, [])
 
-    //initialize ntent archive, passing in nft.storage API Key
-    //optionally include preferred gateway 
-    var nArchive = new NtentArchive(nftStorageApiKey, preferredIpfsGatewayBaseUrl);
+//initialize ntent archive, passing in nft.storage API Key
+//optionally include preferred gateway
+var nArchive = new NtentArchive(nftStorageApiKey, preferredIpfsGatewayBaseUrl)
 
-    //trims each string, converts to lower case, and removes duplicates
-    var tags = ["art", "generative art", "generative", "jiwa", "ntent"];
+//trims each string, converts to lower case, and removes duplicates
+var tags = ['art', 'generative art', 'generative', 'jiwa', 'ntent']
 
-    // include our relevant content options for this upload
-    var contentOptions = {
-        image: {
-            buffer: nftImage,
-            filename: "image.png"
-        },
-        html: {
-            files: nftGenArtProject,
-            rootFolder : nftGenArtProjectFolder
-        }
-    }
+// include our relevant content options for this upload
+var contentOptions = {
+    image: {
+        buffer: nftImage,
+        filename: 'image.png',
+    },
+    html: {
+        files: nftGenArtProject,
+        rootFolder: nftGenArtProjectFolder,
+    },
+}
 
-    //and let it fly
-    var result = await nArchive.archiveToken(testMetadata, contentOptions, tags, "123");
-    
-    //success! do what you want with the results
-    if(result){
-        result.data.ipfsCid = result.ipnft;
-        result.data.gatewayUrl = "https://" + result.data.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
-        console.log(JSON.stringify(result));
-    }else{
-        console.log("Archive failed! Check the logs.")
-    }
-   ```
+//and let it fly
+var result = await nArchive.archiveToken(
+    testMetadata,
+    contentOptions,
+    tags,
+    '123'
+)
+
+//success! do what you want with the results
+if (result) console.log(JSON.stringify(result))
+else console.log('Archive failed! Check the logs.')
+```
 
     Example 2 : NFT with Video Content
 
-   ```js
-    //define whatever NFT meta is relevant to you!
-    //make sure to include minimum ERC-721 standard properties
-    var testMetadata = {
-        name: "NFT Upload Test",
-        description: "This describes the NFT in great detail.",
-        artist: "jiwa",
-        collection_name: "Digital Dust Bowl; the Collapse of the Entire Internet"
-    }
+```js
+//define whatever NFT meta is relevant to you!
+//make sure to include minimum ERC-721 standard properties
+var testMetadata = {
+    name: 'NFT Upload Test',
+    description: 'This describes the NFT in great detail.',
+    artist: 'jiwa',
+    collection_name: 'Digital Dust Bowl; the Collapse of the Entire Internet',
+}
 
-    //get file buffers of relevant files
-    var nftImage = await fs.readFileSync("./assets/example.png");
-    var nftVideo = await fs.readFileSync("./assets/example-vid.mp4");
+//get file buffers of relevant files
+var nftImage = await fs.readFileSync('./assets/example.png')
+var nftVideo = await fs.readFileSync('./assets/example-vid.mp4')
 
-    //initialize ntent archive, passing in nft.storage API Key
-    //optionally include preferred gateway 
-    var nArchive = new NtentArchive(nftStorageApiKey, preferredIpfsGatewayBaseUrl);
+//initialize ntent archive, passing in nft.storage API Key
+//optionally include preferred gateway
+var nArchive = new NtentArchive(nftStorageApiKey, preferredIpfsGatewayBaseUrl)
 
-    //ntent archive will trim each string, 
-    //convert to lower case, and remove duplicates.
-    var tags = ["art", "generative art", "generative", "jiwa", "ntent"];
+//ntent archive will trim each string,
+//convert to lower case, and remove duplicates.
+var tags = ['art', 'generative art', 'generative', 'jiwa', 'ntent']
 
-    // include our relevant content options for this upload
-    var contentOptions = {
-        image: {
-            buffer: nftImage,
-            filename: "image.png"
-        },
-        video: {
-            buffer: nftVideo,
-            filename: "video.mp4"
-        },
-    }
+// include our relevant content options for this upload
+var contentOptions = {
+    image: {
+        buffer: nftImage,
+        filename: 'image.png',
+    },
+    video: {
+        buffer: nftVideo,
+        filename: 'video.mp4',
+    },
+}
 
-    //and let it fly
-    var result = await nArchive.archiveToken(testMetadata, contentOptions, tags, "123");
+//and let it fly
+var result = await nArchive.archiveToken(
+    testMetadata,
+    contentOptions,
+    tags,
+    '123'
+)
 
-    //success! do what you want with the results
-    if(result){
-        //success! do what you want with the results
-        result.ipfsCid = result.ipnft;
-        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
-        console.log(JSON.stringify(result));
-    }else{
-        console.log("Archive failed! Check the logs.")
-    }
-   ```
+//success! do what you want with the results
+if (result) console.log(JSON.stringify(result))
+else console.log('Archive failed! Check the logs.')
+```
 
-   More examples in <a href="https://github.com/ntentart/ntent-archive/blob/master/examples.js">examples.js</a>
+More examples in <a href="https://github.com/ntentart/ntent-archive/blob/master/examples.js">examples.js</a>
+
+**Result Example**
+
+```js
+{"name":"NFT Upload Test","description":"This describes the NFT in great detail.","artist":"jiwa","collection_name":"Digital Dust Bowl; the Collapse of the Entire Internet","creatorId":"123","archivalTags":["art","generative art","generative","jiwa","ntent","video","video/mp4","video.mp4"],"created":1671394067306,"createdFriendly":"21:07:47 GMT+0100 (Central European Standard Time)","interactive_nft":{"code_uri":"ipfs://bafybeidjyubn4ycd3s6w5eefec6y6rlsr6vj4v6uvqz75zgajjncd2cbzu/video.mp4"},"image":"ipfs://bafybeihjqqfjuucgui6n5kl2qviofwe3z3dt3nnnt275pkfqutddwjt3ra/image.png","full_screen_url":"ipfs://bafybeidjyubn4ycd3s6w5eefec6y6rlsr6vj4v6uvqz75zgajjncd2cbzu/video.mp4","animation_url":"ipfs://bafybeidjyubn4ycd3s6w5eefec6y6rlsr6vj4v6uvqz75zgajjncd2cbzu/video.mp4","ipfsCid":"bafyreifpz67hrkydnmpimgii6rqcqvciqoi2xsmxow4fnhoz527nvk2n4e","gatewayUrl":"https://bafyreifpz67hrkydnmpimgii6rqcqvciqoi2xsmxow4fnhoz527nvk2n4e.ipfs.nftstorage.link/metadata.json"}
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
+
 ## Roadmap
 
 See the [open issues](https://github.com/ntentart/ntent-archive/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -399,14 +403,15 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- CONTACT -->
+
 ## Contact
 
 jiwa - [@ntentart](https://twitter.com/ntentart) - iam@ntent.art
@@ -416,14 +421,16 @@ jiwa - [@ntentart](https://twitter.com/ntentart) - iam@ntent.art
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
-Thanks to goes to the universe. 
+Thanks to goes to the universe.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/ntentart/ntent-archive.svg?style=for-the-badge
 [contributors-url]: https://github.com/ntentart/ntent-archive/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/ntentart/ntent-archive.svg?style=for-the-badge
@@ -434,8 +441,8 @@ Thanks to goes to the universe.
 [issues-url]: https://github.com/ntentart/ntent-archive/issues
 [license-shield]: https://img.shields.io/github/license/ntentart/ntent-archive.svg?style=for-the-badge
 [license-url]: https://github.com/ntentart/ntent-archive/blob/master/LICENSE.txt
-[product-screenshot]: assets/banner.png 
-[ntent.art]: assets/logo.png 
+[product-screenshot]: assets/banner.png
+[ntent.art]: assets/logo.png
 [ntent-url]: https://ntent.art/
 [nft.storage]: assets/nftstorage.png
 [nftstorage-url]: https://nft.storage/
