@@ -128,7 +128,7 @@
     2. Content Options object, you need to use the appropriate format, more info / examples below. 
 
     3. Tags used to find this content later, ie search, etc.
-    
+
     4. Optionally, include your creator id if you've been given one.
 
 
@@ -167,20 +167,6 @@
 
     //////////////////////////
     2. Content Options Properties
-    
-    Single File
-    If archiving a single file, and the file is not an image, gif, or video, use the other property and format. 
-
-    Collection of Files
-    It is recommended to upload one file at a time, for archiving purposes, which gives each its own metadata, but if more appropriate, you can upload a collection and provide a single metadata file for the whole collection. 
-
-    If uploading multiple files with a single metadata file, use the collection property and format.
-
-    Html Projects
-    If uploading an html project, use the html property and format.
-
-    NFT Assets
-    For 'NFT' methods, the image property and format is required, and will be used as a preview image if other files are included. 
 
     Use the following formats, and see below for examples.
     
@@ -215,6 +201,22 @@
         },
     }
   ```
+
+  **Content Options Notes**
+
+    Single File
+    If archiving a single file, and the file is not an image, gif, or video, use the other property and format. 
+
+    Collection of Files
+    It is recommended to upload one file at a time, for archiving purposes, which gives each its own metadata, but if more appropriate, you can upload a collection and provide a single metadata file for the whole collection. 
+
+    If uploading multiple files with a single metadata file, use the collection property and format.
+
+    Html Projects
+    If uploading an html project, use the html property and format.
+
+    NFT Assets
+    For 'NFT' methods, the image property and format is required, and will be used as a preview image if other files are included. 
 
 ### Installation
 
