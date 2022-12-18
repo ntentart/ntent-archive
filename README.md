@@ -221,12 +221,12 @@ Option 1 : Install npm package in your project
 1. Get a free API Key at [https://nft.storage](https://nft.storage)
 2. Install into your project with npm
    ```sh
-   npm install ntent-archive
+    npm install ntent-archive
    ```
 3. Add the require like this:
-  ```js
+   ```js
     var NtentArchive = require("ntent-archive");
-  ```
+   ```
 4. Pass in your API Key to the NtentArchive constructor in your code. 
    ```js
     var nArchive = new NtentArchive(nftStorageApiKey);
