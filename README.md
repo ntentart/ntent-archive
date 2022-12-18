@@ -129,10 +129,10 @@
     3. Tags used to find this content later, ie search, etc.
     4. Optionally, include your creator id if you've been given one.
 
-    //////////////////////////
-    1. Compliant NFT Metadata Example JSON
 
    ```js
+    //////////////////////////
+    //1. Compliant NFT Metadata Example JSON
     {
         "platform": "ntent.art",
         "name": "Moment After",
