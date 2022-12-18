@@ -100,6 +100,26 @@
 ### Parameters
 
 <div>
+    <a href="https://ntent.art">
+        <img src="assets/logo.png"width="200"/>
+    </a>
+</div>
+<div>
+    <a href="https://nft.storage">
+        <img src="assets/nftstorage.png"  width="200"/>
+    </a>
+</div>
+<div>
+    <a href="https://ipfs.io">
+        <img src="assets/ipfs.png" width="200"/>
+    </a>
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+## Getting Started
+
     Most methods take the following 4 parameters,
     1. Metadata
        a. If using an 'NFT' method, requires compliant ERC-721 NFT Metadata, example below. https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md 
@@ -111,8 +131,7 @@
 
     //////////////////////////
     1. Compliant NFT Metadata Example JSON
-</div>
-<div>
+
    ```js
     {
         "platform": "ntent.art",
@@ -143,31 +162,22 @@
         }
     }
   ```
-</div>
-<div>
-    <a href="https://ipfs.io">
-        <img src="assets/ipfs.png" width="200"/>
-    </a>
-</div>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-## Getting Started
-
 
     //////////////////////////
     2. Content Options Properties
     
-    <strong>Single File</strong>
+    Single File
     If archiving a single file, and the file is not an image, gif, or video, use the other property and format. 
 
+    Collection of Files
     It is recommended to upload one file at a time, for archiving purposes, which gives each its own metadata, but if more appropriate, you can upload a collection and provide a single metadata file for the whole collection. 
 
     If uploading multiple files with a single metadata file, use the collection property and format.
 
+    Html Projects
     If uploading an html project, use the html property and format.
 
+    NFT Assets
     For 'NFT' methods, the image property and format is required, and will be used as a preview image if other files are included. 
 
     Use the following formats, and see below for examples.
