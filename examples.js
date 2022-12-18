@@ -1,7 +1,7 @@
 var NtentArchive = require("./ntentArchive.js");
 const fs = require("fs");
 
-var nftStorageApiKey = "API_KEY_HERE";
+var nftStorageApiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDQ4NTc4MzJENzk0NTRkRjJhMUM1ZmU4MDAyN0Y3MDhCNjZiMDlENTUiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY3MTAzOTYyMjIzOSwibmFtZSI6Imppd2EifQ.tt8WPj6_t3uvLUTG4d8B1E6MR8GN_ij4947YgmdjLn4";
 var preferredIpfsGatewayBaseUrl = "ipfs.nftstorage.link";
 
 async function videoNFTExample(){
@@ -44,9 +44,8 @@ async function videoNFTExample(){
 
     //success! do what you want with the results
     if(result){
-        //success! do what you want with the results
-        result.ipfsCid = result.ipnft;
-        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
+        result.data.ipfsCid = result.ipnft;
+        result.data.gatewayUrl = "https://" + result.data.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
         console.log(JSON.stringify(result));
     }else{
         console.log("Archive failed! Check the logs.")
@@ -101,10 +100,8 @@ async function htmlNFTExample(){
     //and let it fly
     var result = await nArchive.archiveToken(testMetadata, contentOptions, tags, "123");
     
+    //success! do what you want with the results
     if(result){
-        //success! do what you want with the results
-        result.ipfsCid = result.ipnft;
-        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
         console.log(JSON.stringify(result));
     }else{
         console.log("Archive failed! Check the logs.")
@@ -143,10 +140,8 @@ async function imageFileOnlyExample(){
     //and let it fly
     var result = await nArchive.archiveFile(testMetadata, contentOptions, tags, "123");
 
+    //success! do what you want with the results
     if(result){
-        //success! do what you want with the results
-        result.ipfsCid = result.ipnft;
-        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
         console.log(JSON.stringify(result));
     }else{
         console.log("Archive failed! Check the logs.")
@@ -201,11 +196,9 @@ async function collectionExample(){
 
     //and let it fly
     var result = await nArchive.archiveCollection(testMetadata, contentOptions, tags, "123");
-
+    
+    //success! do what you want with the results
     if(result){
-        //success! do what you want with the results
-        result.ipfsCid = result.ipnft;
-        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
         console.log(JSON.stringify(result));
     }else{
         console.log("Archive failed! Check the logs.")
@@ -260,16 +253,12 @@ async function htmlOnlyExample(){
     //and let it fly
     var result = await nArchive.archiveHtmlSite(testMetadata, contentOptions, tags, "123");
     
+    //success! do what you want with the results
     if(result){
-        //success! do what you want with the results
-        result.ipfsCid = result.ipnft;
-        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
         console.log(JSON.stringify(result));
     }else{
         console.log("Archive failed! Check the logs.")
     }
-
-   
 }
 
 async function getDirectoryContents(dirName, files) {

@@ -100,6 +100,97 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
+
+    Most methods take the following 4 parameters,
+    1. Metadata
+       a. If using an 'NFT' method, requires compliant ERC-721 NFT Metadata, example below. https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md 
+       b. else only 'name', and 'description' are required, but you can include any describing metadata.
+
+    2. Content Options object, you need to use the appropriate format, more info / examples below. 
+    3. Tags used to find this content later, ie search, etc.
+    4. Optionally, include your creator id if you've been given one.
+
+    //////////////////////////
+    1. Compliant NFT Metadata Example JSON
+   ```js
+    {
+        "platform": "ntent.art",
+        "name": "Moment After",
+        "series": "1",
+        "description": "Moment After by ntent.art is a 1 of 1 piece of digital art at the intersection of multimedia, performance, and abstract generative art.  Moment After combines the human side of interaction and technology with the ephemeral nature of performance + the permanence of the blockchain.  Moment After brings attention to the moment after the climax in any interaction.  Do you feel good, or do you feel off?  Feel into the moment after. Please allow 10-15 minutes for loading to complete.",
+        "external_url": "https://app.ntent.art/n/project/8",
+        "artist": "ntent.art",
+        "collection_name": "ntent.art",
+        "traits": [{
+            "trait_type": "Project",
+            "value": "1 of 1's"
+        }],
+        "attributes": [{
+            "trait_type": "Project",
+            "value": "1 of 1's"
+        }],
+        "features": ["Project : 1 of 1's"],
+        "website": "https://app.ntent.art",
+        "tokenID": "1",
+        "license": "MIT",
+        "projectId": "1",
+        "image": "https://hosted.ntent.art/images/ma.jpeg",
+        "full_screen_url": "https://hosted.ntent.art/projects/moment-after/index.html",
+        "animation_url": "https://hosted.ntent.art/projects/moment-after/index.html",
+        "interactive_nft": {
+            "code_uri": "https://hosted.ntent.art/projects/moment-after/index.html"
+        }
+    }
+  ```
+
+    //////////////////////////
+    2. Content Options Properties
+    
+    <strong>Single File</strong>
+    If archiving a single file, and the file is not an image, gif, or video, use the other property and format. 
+
+    It is recommended to upload one file at a time, for archiving purposes, which gives each its own metadata, but if more appropriate, you can upload a collection and provide a single metadata file for the whole collection. 
+
+    If uploading multiple files with a single metadata file, use the collection property and format.
+
+    If uploading an html project, use the html property and format.
+
+    For 'NFT' methods, the image property and format is required, and will be used as a preview image if other files are included. 
+
+    Use the following formats, and see below for examples.
+    
+   ```js
+    var contentOptions = {
+        image : {
+            buffer : buffer,
+            filename : filename
+        },
+        gif : {
+            buffer : buffer,
+            filename : filename
+        },
+        video : {
+            buffer : buffer,
+            filename : filename
+        },
+        other : {
+            buffer : buffer,
+            filename : filename
+        },
+        //'files' objects for html and collection must be an array of buffers
+        //populate 'rootFolder' with root project folder if applicable
+        html: {
+            files: files,
+            rootFolder : rootFolder
+        },
+
+        collection: {
+            files: files,
+            rootFolder : rootFolder
+        },
+    }
+  ```
+
 ### Installation
 
 Option 1 : Install npm package in your project
@@ -196,10 +287,10 @@ Option 2 : Clone the repo and play with the examples
     //and let it fly
     var result = await nArchive.archiveToken(testMetadata, contentOptions, tags, "123");
     
+    //success! do what you want with the results
     if(result){
-        //success! do what you want with the results
-        result.ipfsCid = result.ipnft;
-        result.gatewayUrl = "https://" + result.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
+        result.data.ipfsCid = result.ipnft;
+        result.data.gatewayUrl = "https://" + result.data.ipfsCid+ "."+ preferredIpfsGatewayBaseUrl  + "/metadata.json";
         console.log(JSON.stringify(result));
     }else{
         console.log("Archive failed! Check the logs.")
