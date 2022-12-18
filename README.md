@@ -26,7 +26,7 @@
 <h3 align="center">Archive by ntent.art</h3>
 
   <p align="center">
-    Archive by ntent.art assist in archiving multimedia content + NFT metadata. 
+    Archive by ntent.art assists in archiving multimedia content + NFT metadata. 
     Includes support for html-based projects. Easily uploaded to IPFS via 
     NFT.STORAGE for decentralized storage.
     <br />
@@ -109,11 +109,15 @@ Option 1 : Install npm package in your project
    ```sh
    npm install ntent-archive
    ```
-3. Pass in your API Key to the NtentArchive constructor in your code. 
+3. Add the require like this:
+  ```js
+    var NtentArchive = require("ntent-archive");
+  ```
+4. Pass in your API Key to the NtentArchive constructor in your code. 
    ```js
     var nArchive = new NtentArchive(nftStorageApiKey);
    ```
-4. See <a href="#usage">Usage</a> below and examples.js for examples/usage details.
+5. See <a href="#usage">Usage</a> below and examples.js for examples/usage details.
 
 <br>
 
@@ -256,8 +260,6 @@ Option 2 : Clone the repo and play with the examples
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -282,7 +284,6 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- LICENSE -->
 ## License
 
@@ -300,16 +301,12 @@ jiwa - [@ntentart](https://twitter.com/ntentart) - iam@ntent.art
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Thanks to goes to the universe.
+Thanks to goes to the universe. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

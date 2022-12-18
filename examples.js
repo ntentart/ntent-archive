@@ -299,8 +299,8 @@ async function getDirectoryContents(dirName, files) {
 async function main() {
 
     ////NFT Examples////
-    htmlNFTExample();
-    //videoNFTExample();
+    //htmlNFTExample();
+    videoNFTExample();
 
     ////Other Examples////
     //imageFileOnlyExample();
