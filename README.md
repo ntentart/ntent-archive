@@ -97,10 +97,9 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
-## Getting Started
+### Parameters
 
-
+<div>
     Most methods take the following 4 parameters,
     1. Metadata
        a. If using an 'NFT' method, requires compliant ERC-721 NFT Metadata, example below. https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md 
@@ -112,6 +111,8 @@
 
     //////////////////////////
     1. Compliant NFT Metadata Example JSON
+</div>
+<div>
    ```js
     {
         "platform": "ntent.art",
@@ -142,6 +143,18 @@
         }
     }
   ```
+</div>
+<div>
+    <a href="https://ipfs.io">
+        <img src="assets/ipfs.png" width="200"/>
+    </a>
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+## Getting Started
+
 
     //////////////////////////
     2. Content Options Properties
