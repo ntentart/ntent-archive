@@ -18,6 +18,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+  <a href="https://github.com/ntentart/ntent-archive">
+    <img src="assets/logo.gif" alt="Logo" width="80" height="80">
+  </a>
 
 <h3 align="center">Archive by ntent.art</h3>
 
@@ -65,7 +68,7 @@
 
 ## About The Project
 
-Created by <a href="http://ntent.art ">ntent.art</a>
+[![Product Name Screen Shot][product-screenshot]](https://ntent.art)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -73,23 +76,22 @@ Created by <a href="http://ntent.art ">ntent.art</a>
 
 <div>
     <a href="https://ntent.art">
-       ntent.art
+        <img src="assets/logo.png"width="200"/>
     </a>
 </div>
 <div>
     <a href="https://nft.storage">
-        nft.storage
+        <img src="assets/nftstorage.png"  width="200"/>
     </a>
 </div>
 <div>
     <a href="https://ipfs.io">
-        ipfs
+        <img src="assets/ipfs.png" width="200"/>
     </a>
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
