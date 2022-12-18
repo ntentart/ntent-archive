@@ -131,7 +131,7 @@
 
     4. Optionally, include your creator id if you've been given one.
 
-  **2. 1. Compliant NFT Metadata Example JSON**
+  **1. Compliant NFT Metadata Example JSON**
    ```js
     {
         "platform": "ntent.art",
