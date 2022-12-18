@@ -372,7 +372,33 @@ More examples in <a href="https://github.com/ntentart/ntent-archive/blob/master/
 **Result Example**
 
 ```js
-{"name":"NFT Upload Test","description":"This describes the NFT in great detail.","artist":"jiwa","collection_name":"Digital Dust Bowl; the Collapse of the Entire Internet","creatorId":"123","archivalTags":["art","generative art","generative","jiwa","ntent","video","video/mp4","video.mp4"],"created":1671394067306,"createdFriendly":"21:07:47 GMT+0100 (Central European Standard Time)","interactive_nft":{"code_uri":"ipfs://bafybeidjyubn4ycd3s6w5eefec6y6rlsr6vj4v6uvqz75zgajjncd2cbzu/video.mp4"},"image":"ipfs://bafybeihjqqfjuucgui6n5kl2qviofwe3z3dt3nnnt275pkfqutddwjt3ra/image.png","full_screen_url":"ipfs://bafybeidjyubn4ycd3s6w5eefec6y6rlsr6vj4v6uvqz75zgajjncd2cbzu/video.mp4","animation_url":"ipfs://bafybeidjyubn4ycd3s6w5eefec6y6rlsr6vj4v6uvqz75zgajjncd2cbzu/video.mp4","ipfsCid":"bafyreifpz67hrkydnmpimgii6rqcqvciqoi2xsmxow4fnhoz527nvk2n4e","gatewayUrl":"https://bafyreifpz67hrkydnmpimgii6rqcqvciqoi2xsmxow4fnhoz527nvk2n4e.ipfs.nftstorage.link/metadata.json"}
+{
+   "name":"NFT Upload Test",
+   "description":"This describes the NFT in great detail.",
+   "artist":"jiwa",
+   "collection_name":"Digital Dust Bowl; the Collapse of the Entire Internet",
+   "creatorId":"123",
+   "archivalTags":[
+      "art",
+      "generative art",
+      "generative",
+      "jiwa",
+      "ntent",
+      "video",
+      "video/mp4",
+      "video.mp4"
+   ],
+   "created":1671394067306,
+   "createdFriendly":"21:07:47 GMT+0100 (Central European Standard Time)",
+   "interactive_nft":{
+      "code_uri":"ipfs://bafybeidjyubn4ycd3s6w5eefec6y6rlsr6vj4v6uvqz75zgajjncd2cbzu/video.mp4"
+   },
+   "image":"ipfs://bafybeihjqqfjuucgui6n5kl2qviofwe3z3dt3nnnt275pkfqutddwjt3ra/image.png",
+   "full_screen_url":"ipfs://bafybeidjyubn4ycd3s6w5eefec6y6rlsr6vj4v6uvqz75zgajjncd2cbzu/video.mp4",
+   "animation_url":"ipfs://bafybeidjyubn4ycd3s6w5eefec6y6rlsr6vj4v6uvqz75zgajjncd2cbzu/video.mp4",
+   "ipfsCid":"bafyreifpz67hrkydnmpimgii6rqcqvciqoi2xsmxow4fnhoz527nvk2n4e",
+   "gatewayUrl":"https://bafyreifpz67hrkydnmpimgii6rqcqvciqoi2xsmxow4fnhoz527nvk2n4e.ipfs.nftstorage.link/metadata.json"
+}
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
