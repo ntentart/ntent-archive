@@ -163,12 +163,10 @@
             "code_uri": "https://hosted.ntent.art/projects/moment-after/index.html"
         }
     }
+
   ```
-
-    //////////////////////////
-    2. Content Options Properties
-
-    Use the following formats, and see below for examples.
+  **2. Content Options Properties**
+  *Use the following formats, and see below for examples.*
     
    ```js
     var contentOptions = {
