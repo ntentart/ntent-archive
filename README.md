@@ -120,13 +120,15 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-    Most methods take the following 4 parameters,
+    Most methods take the following 4 parameters:
     1. Metadata
        a. If using an 'NFT' method, requires compliant ERC-721 NFT Metadata, example below. https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md 
        b. else only 'name', and 'description' are required, but you can include any describing metadata.
 
     2. Content Options object, you need to use the appropriate format, more info / examples below. 
+
     3. Tags used to find this content later, ie search, etc.
+    
     4. Optionally, include your creator id if you've been given one.
 
 
