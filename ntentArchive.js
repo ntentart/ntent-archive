@@ -102,7 +102,7 @@ class NtentArchive {
             // append creator id if given
             if (creatorId) {
                 nftMetadata.creatorId = creatorId
-            }
+            } 
 
             // lookup mime content types
             this.#lookupMimeTypes(contentOptions);

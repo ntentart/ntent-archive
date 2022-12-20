@@ -1,7 +1,7 @@
 var NtentArchive = require("./ntentArchive.js");
 const fs = require("fs");
 
-var nftStorageApiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDQ4NTc4MzJENzk0NTRkRjJhMUM1ZmU4MDAyN0Y3MDhCNjZiMDlENTUiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY3MTAzOTYyMjIzOSwibmFtZSI6Imppd2EifQ.tt8WPj6_t3uvLUTG4d8B1E6MR8GN_ij4947YgmdjLn4";
+var nftStorageApiKey = "NFT_STORAGE_API_KEY_HERE";
 var preferredIpfsGatewayBaseUrl = "ipfs.nftstorage.link";
 
 async function videoNFTExample(){
