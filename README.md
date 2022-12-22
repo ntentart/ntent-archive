@@ -183,19 +183,19 @@ var contentOptions = {
 **Content Options Notes**
 
 
-    Single File
-    If archiving a single file, and the file is not an image, gif, or video, use the other property and format.
+Single File
+If archiving a single file, and the file is not an image, gif, or video, use the other property and format.
 
-    Collection of Files
-    It is recommended to upload one file at a time, for archiving purposes, which gives each its own metadata, but if more appropriate, you can upload a collection and provide a single metadata file for the whole collection.
+Collection of Files
+It is recommended to upload one file at a time, for archiving purposes, which gives each its own metadata, but if more appropriate, you can upload a collection and provide a single metadata file for the whole collection.
 
-    If uploading multiple files with a single metadata file, use the collection property and format.
+If uploading multiple files with a single metadata file, use the collection property and format.
 
-    Html Projects
-    If uploading an html project, use the html property and format.
+Html Projects
+If uploading an html project, use the html property and format.
 
-    NFT Assets
-    For 'NFT' methods, the image property and format is required, and will be used as a preview image if other files are included.
+NFT Assets
+For 'NFT' methods, the image property and format is required, and will be used as a preview image if other files are included.
 
 ### Installation
 
