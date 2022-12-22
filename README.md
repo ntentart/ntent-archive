@@ -72,7 +72,7 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+## Built With
 
 <div>
     <a href="https://ntent.art">
@@ -97,8 +97,6 @@
 
 ## Getting Started
 
-<p>
-
     Most methods take the following 4 parameters:
     1. Metadata
        a. If using an 'NFT' method, requires compliant ERC-721 NFT Metadata, example below. https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md
@@ -110,7 +108,6 @@
 
     4. Optionally, include your creator id if you've been given one.
 
-</p>
 
 **1. Compliant NFT Metadata Example JSON**
 
