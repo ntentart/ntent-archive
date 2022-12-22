@@ -97,6 +97,8 @@
 
 ## Getting Started
 
+<p>
+
     Most methods take the following 4 parameters:
     1. Metadata
        a. If using an 'NFT' method, requires compliant ERC-721 NFT Metadata, example below. https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md
@@ -107,6 +109,8 @@
     3. Tags used to find this content later, ie search, etc.
 
     4. Optionally, include your creator id if you've been given one.
+
+</p>
 
 **1. Compliant NFT Metadata Example JSON**
 
@@ -175,9 +179,11 @@ var contentOptions = {
         rootFolder: rootFolder,
     },
 }
+
 ```
 
 **Content Options Notes**
+
 
     Single File
     If archiving a single file, and the file is not an image, gif, or video, use the other property and format.
