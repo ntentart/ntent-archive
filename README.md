@@ -70,23 +70,30 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://ntent.art)
 
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Built With
 
 <div>
     <a href="https://ntent.art">
-        <img src="assets/logo.png"width="200"/>
+        <img src="assets/readme/logo.png"width="200"/>
     </a>
 </div>
 <div>
     <a href="https://nft.storage">
-        <img src="assets/nftstorage.png"  width="200"/>
+        <img src="assets/readme/nftstorage.png"  width="200"/>
     </a>
 </div>
 <div>
     <a href="https://ipfs.io">
-        <img src="assets/ipfs.png" width="200"/>
+        <img src="assets/readme/ipfs.png" width="200"/>
+    </a>
+</div>
+<div>
+    <a href="https://filecoin.io">
+        <img src="assets/readme/filecoin.png" width="200"/>
     </a>
 </div>
 
@@ -96,6 +103,8 @@
 <!-- GETTING STARTED -->
 
 ## Getting Started
+
+[![ntent archive diagram][archive-diagram]]
 
 Most methods take the following 4 parameters:
 
@@ -452,10 +461,11 @@ Thanks to goes to the universe.
 [issues-url]: https://github.com/ntentart/ntent-archive/issues
 [license-shield]: https://img.shields.io/github/license/ntentart/ntent-archive.svg?style=for-the-badge
 [license-url]: https://github.com/ntentart/ntent-archive/blob/master/LICENSE.txt
-[product-screenshot]: assets/banner.png
-[ntent.art]: assets/logo.png
+[product-screenshot]: assets/readme/banner.png
+[product-screenshot]: assets/readme/ntent-archive.png
+[ntent.art]: assets/readme/logo.png
 [ntent-url]: https://ntent.art/
-[nft.storage]: assets/nftstorage.png
+[nft.storage]: assets/readme/nftstorage.png
 [nftstorage-url]: https://nft.storage/
-[ipfs.io]: assets/ipfs.png
+[ipfs.io]: assets/readme/ipfs.png
 [ipfs-url]: https://ipfs.io/
