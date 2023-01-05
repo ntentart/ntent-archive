@@ -19,7 +19,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ntentart/ntent-archive">
-    <img src="assets/logo.gif" alt="Logo" width="80" height="80">
+    <img src="assets/readme/logo.gif" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Archive by ntent.art</h3>
@@ -462,10 +462,10 @@ Thanks to goes to the universe.
 [license-shield]: https://img.shields.io/github/license/ntentart/ntent-archive.svg?style=for-the-badge
 [license-url]: https://github.com/ntentart/ntent-archive/blob/master/LICENSE.txt
 [product-screenshot]: assets/readme/banner.png
-[product-screenshot]: assets/readme/ntent-archive.png
+[archive-diagram]: assets/readme/ntent-archive.png
 [ntent.art]: assets/readme/logo.png
 [ntent-url]: https://ntent.art/
-[nft.storage]: assets/readme/nftstorage.png
+[nft.storage]: assets/readme/nftstorage.pngß
 [nftstorage-url]: https://nft.storage/
 [ipfs.io]: assets/readme/ipfs.png
 [ipfs-url]: https://ipfs.io/
