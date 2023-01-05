@@ -104,12 +104,12 @@
 
 ## Getting Started
 
-[![ntent archive diagram][archive-diagram]]
+[![ntent archive diagram][archive-diagram]]()
 
 Most methods take the following 4 parameters:
 
-1. Metadata
-    a. If using an 'NFT' method, requires compliant ERC-721 NFT Metadata, example below. https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md
+1. Metadata<br>
+    a. If using an 'NFT' method, requires compliant ERC-721 NFT Metadata, example below. https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md <br>
     b. else only 'name', and 'description' are required, but you can include any describing metadata.
 
 2. Content Options object, you need to use the appropriate format, more info / examples below.
@@ -444,7 +444,8 @@ jiwa - [@ntentart](https://twitter.com/ntentart) - iam@ntent.art
 
 ## Acknowledgments
 
-Thanks to goes to the universe.
+Thanks to @TkKonstantin for the guidance.
+And thanks to the universe.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
