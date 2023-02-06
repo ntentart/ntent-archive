@@ -412,7 +412,7 @@ class NtentArchive {
             tags.push('collection')
         }
 
-        metadata.archivalTags = tags
+        metadata.archivalTags = [...new Set(tags)];
         metadata.created = Date.now()
         metadata.createdFriendly = new Date(Date.now()).toTimeString()
     }
